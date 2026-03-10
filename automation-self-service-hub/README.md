@@ -29,3 +29,54 @@ pip install streamlit
 
 # Launch the Hub
 streamlit run app.py
+
+
+### Launcher Script
+@echo off
+setlocal
+
+:: --- Configuration (Sanitized for Portability) ---
+:: We use %~dp0 to refer to the folder where this batch file lives
+set "SCRIPT_DIR=%~dp0"
+set "VENV_PATH=%SCRIPT_DIR%.venv"
+set "REQ_FILE=%SCRIPT_DIR%requirements.txt"
+set "PY_SCRIPT=%SCRIPT_DIR%python_script_runner.py"
+
+echo ====================================================
+echo Initializing Finance Automation Hub
+echo ====================================================
+
+:: 1. Environment Check & Creation
+:: This ensures every user has the exact same library versions
+if not exist "%VENV_PATH%\Scripts\activate.bat" (
+    echo [Step 1] Creating localized virtual environment...
+    python -m venv "%VENV_PATH%" --upgrade-deps
+)
+
+:: 2. Activation
+echo [Step 2] Activating Virtual Environment...
+call "%VENV_PATH%\Scripts\activate.bat"
+
+:: 3. Dependency Management
+:: Upgrading pip and syncing from requirements.txt ensures the app never breaks
+echo [Step 3] Syncing libraries from requirements.txt...
+python -m pip install --upgrade pip
+if exist "%REQ_FILE%" (
+    python -m pip install -r "%REQ_FILE%"
+)
+
+:: 4. Launch Streamlit Hub
+if exist "%PY_SCRIPT%" (
+    echo [Step 4] Launching Streamlit UI...
+    cd /d "%SCRIPT_DIR%"
+    :: We use "python -m streamlit" for better compatibility across different installs
+    python -m streamlit run "python_script_runner.py"
+) else (
+    echo [Error] Entry point "python_script_runner.py" not found!
+    pause
+)
+
+:: 5. Cleanup on Close
+call deactivate
+echo Session Closed.
+pause
