@@ -1,0 +1,22 @@
+# --- Core UI & Orchestration ---
+streamlit               # Web interface and navigation
+watchdog                # Efficiently monitors file changes for Streamlit
+
+# --- Data Manipulation & Analysis ---
+pandas                  # Primary data structures and ETL
+numpy                   # Numerical support for Pandas
+openpyxl                # Reading/Writing modern Excel (.xlsx) files
+xlsxwriter              # High-performance Excel file creation
+python-dateutil         # Advanced date/business day handling
+
+# --- Finance & Excel Automation ---
+xlwings                 # Interacting with Excel COM/VBA macros
+pywin32                 # Windows API support (required for xlwings/Excel)
+
+# --- Extraction & Scrapers ---
+pdfplumber              # High-fidelity PDF text and table extraction
+selenium                # Browser automation (for DriverCheck/Scrapers)
+webdriver-manager       # Automated management of binary drivers
+
+# --- Utilities ---
+requests                # API/HTTP handling for external data
