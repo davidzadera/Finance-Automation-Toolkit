@@ -28,5 +28,8 @@ To run the end-to-end process:
 # 1. Install dependencies
 pip install -r requirements.txt
 
-# 2. Run the master orchestrator (triggers scrapers and updates Excel)
+# 2. Run the scraper
+python bank_scraper.py
+
+# 3. Run the master orchestrator
 python reconciliation_master.py
