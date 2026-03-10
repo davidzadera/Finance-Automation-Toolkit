@@ -21,7 +21,7 @@ This repository contains a collection of production-grade automation tools devel
 * **Impact:** Guaranteed business continuity and process resilience during staff absences.
 
 ## 🛠 Tech Stack
-* **Languages:** Python (Pandas, xlwings, Streamlit), Oracle SQL.
+* **Languages:** Python (Pandas, xlwings, Streamlit).
 * **Tools:** Power BI, Power Automate, Alteryx.
 * **Finance Logic:** P&L Attribution, Intercompany Reconciliations, Futures & Swaps Control.
 
