@@ -1,0 +1,9 @@
+---
+
+### 3. The `requirements.txt` file
+This is important for GitHub. Create a file named `requirements.txt` in the same folder and add these lines:
+```text
+pandas
+xlwings
+pywin32
+datetime
