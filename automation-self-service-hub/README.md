@@ -24,12 +24,6 @@ In many finance teams, "The Python Guy" becomes a single point of failure. If th
 
 ## 🚀 Usage
 ```bash
-# Install Streamlit
-pip install streamlit
-
-# Launch the Hub
-streamlit run app.py
-
 
 ### Launcher Script
 @echo off
